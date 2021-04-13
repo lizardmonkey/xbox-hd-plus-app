@@ -78,6 +78,11 @@ void Scene1::render(SDL_Renderer *renderer) {
           loadTexture(gRenderer, "D:\\assets\\backgrounds\\test_image_7.png");
       SDL_RenderCopy(gRenderer, background_texture, NULL, NULL);
       break;
+    case 8:
+      background_texture =
+          loadTexture(gRenderer, "D:\\assets\\backgrounds\\test_image_8.png");
+      SDL_RenderCopy(gRenderer, background_texture, NULL, NULL);
+      break;      
     default:
       load_scene = 0;
       break;
