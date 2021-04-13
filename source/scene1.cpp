@@ -24,12 +24,21 @@ Scene1::~Scene1(void) {
   }
 }
 
+
 void Scene1::event(SDL_Event event) {
-  switch (event.type) {
+  int8_t button_press = proccess_event(event);
+  
+  switch (button_press) {
+    case SDL_CONTROLLER_BUTTON_A:
+      test_counter++;
+      break;
+
     default:
       break;
   }
 }
+
+
 
 void Scene1::render(SDL_Renderer *renderer) {
   if (background_texture) {
@@ -87,12 +96,5 @@ void Scene1::render(SDL_Renderer *renderer) {
       load_scene = 0;
       break;
   }
-
-  //
-  if (test_counter > 0) {
-    Sleep(5000);
-  }
-
-  //
-  test_counter++;
+  
 }
